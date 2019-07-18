@@ -65,7 +65,7 @@ mongo.connect('mongodb://127.0.0.1/mongochat', (err, dbclient)=>{
         let broadcastStatus = s =>{
             socket.broadcast.emit('status',s);
         }
-
+        console.log(`${username} connected`);
         broadcastStatus({ message: `${username} connected` });
 
         //get chats from database
@@ -107,8 +107,8 @@ mongo.connect('mongodb://127.0.0.1/mongochat', (err, dbclient)=>{
         });
 
         socket.on('disconnect', () => {
-            console.log(`user disconnected`);
-            broadcastStatus({ message: `${username} connected` });
+            console.log(`${username} disconnected`);
+            broadcastStatus({ message: `${username} disconnected` });
         });
     });
     // dbclient.close();

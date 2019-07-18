@@ -92,7 +92,7 @@ _mongodb2.default.connect('mongodb://127.0.0.1/mongochat', function (err, dbclie
         var broadcastStatus = function broadcastStatus(s) {
             socket.broadcast.emit('status', s);
         };
-
+        console.log(username + ' connected');
         broadcastStatus({ message: username + ' connected' });
 
         //get chats from database
@@ -133,8 +133,8 @@ _mongodb2.default.connect('mongodb://127.0.0.1/mongochat', function (err, dbclie
         });
 
         socket.on('disconnect', function () {
-            console.log('user disconnected');
-            broadcastStatus({ message: username + ' connected' });
+            console.log(username + ' disconnected');
+            broadcastStatus({ message: username + ' disconnected' });
         });
     });
     // dbclient.close();

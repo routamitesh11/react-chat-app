@@ -7,11 +7,23 @@
   padding: 10px;
   height: 300px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: lightslategrey;
 }
 
 .app-input{
   margin:20px 0;
-  padding:5px;
+}
+
+.app-welcome{
+  margin-top:20px;
+  border:1px;
+  background-color: bisque;
+  color:black;
+  font-size: 20px;
+  font-weight: 400;
+  height: 50px;
+  padding-top: 10px;
 }
 
 .app-status{
@@ -19,4 +31,28 @@
   right: 5px;
   bottom: 0px;
   margin: 1px 0;
+}
+
+.pull-right{
+  float: right;
+}
+
+.from-me-container{
+  border:1px solid aliceblue;
+  border-radius: 5px;
+  background-color: aliceblue;
+  padding:5px;
+  color:blue;
+}
+
+.from-others-container{
+  border:1px solid lightgoldenrodyellow;
+  border-radius: 5px;
+  background-color: lightgoldenrodyellow;
+  padding: 5px;
+  color:black;
+}
+
+.text-center{
+  text-align: center;
 }

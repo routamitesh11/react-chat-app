@@ -26,7 +26,7 @@ class ChatWindow extends Component {
             this.setState({status:status},()=>{
                 setInterval(() => {
                     this.setState({status:{message:''}})
-                }, 1000);
+                }, 2000);
             });
         })
     }
@@ -66,8 +66,18 @@ class ChatWindow extends Component {
     render() {
         return (
             <div>
+                <div className='row app-welcome'>
+                    <div className='offset-sm-3 col-sm-6 offset-sm-3 text-center'>Welcome {this.props.user}</div>
+                </div>
                 <div className='row'>
-                    <div className='offset-sm-3 col-sm-6 offset-sm-3'>Welcome {this.props.user}</div>
+                    <div className='offset-sm-3 col-sm-6 offset-sm-3'>
+                        <div className='app-messages'>
+                            <Messages messages={this.state.messages} user={this.props.user} />
+                            <div className='app-status'>
+                                {this.state.status.message}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className='row'>
                     <div className='offset-sm-3 col-sm-6 offset-sm-3'>
@@ -78,17 +88,7 @@ class ChatWindow extends Component {
                                 placeholder="Write a message..."
                                 required />
                         </form>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='offset-sm-3 col-sm-6 offset-sm-3'>
-                        <div className='app-messages'>
-                        <Messages messages={this.state.messages}/>
-                        <div className='app-status'>
-                            {this.state.status.message}
-                        </div>
-                        </div>
-                        <button onClick={this.clear}>CLEAR</button>
+                        <button className='btn btn-info col-sm-12' onClick={this.clear}>CLEAR</button>
                     </div>
                 </div>
             </div>
